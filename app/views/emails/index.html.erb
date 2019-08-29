@@ -1,0 +1,32 @@
+  <!DOCTYPE html>
+<html>
+<body>
+
+<div class="form mx-auto pb-3" style="width: 200px;">
+	<%= form_tag(emails_path, method: :post, remote: true) do %>
+    <%= submit_tag 'recevoir un e-mail', :name => 'commit'%>
+    <% end %>
+</div>
+
+<div class="container ">
+  <div class="row ">
+    <div class="col border border-secondary">
+ 		<p>Liste des emails en base</p>
+		<ul id="email-list">
+  		<% @emails.each do |email| %>
+   			<li >"<%= email.object%>" </br> <b> 
+   				   <%= link_to "Voir l'email", email_path(email), remote: true %>
+   			</li>
+  		<% end %>
+    </div>
+    <div class="col border border-secondary">
+      <p> email selectionné </p>
+            <div id ="email-select">
+           </div>
+    </div>
+  </div>
+  <script src="show.js.erb"></script>
+  <script src="destroy.js.erb"></script>
+    </body>
+
+</html>

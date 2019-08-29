@@ -1,0 +1,13 @@
+<!-- <li>"<%= task.title %> <b> <%= task.deadline %>" </b></li> -->
+
+<li><%= category.title  %></li> 
+<div class="card">
+    <ul id="todo-list">
+      <li>
+        <%= task.title  %>
+        <% unless task.deadline.nil? %>
+          , to read: <%= task.deadline.strftime('%D')  %>
+        <% end %>
+      </li>
+    </ul>
+ </div>

@@ -17,3 +17,8 @@ require 'faker'
     my_task.save
   end
 end
+
+5.times do
+	list_email = Email.new(object: Faker::String.random, body: Faker::Lorem.paragraph)
+	list_email.save
+end
